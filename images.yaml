@@ -1,0 +1,5 @@
+registry:
+    url: "localhost:5000"
+    namespace: "nstjelja"
+images:
+    - hello-world

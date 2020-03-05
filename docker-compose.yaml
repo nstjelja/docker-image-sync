@@ -1,0 +1,18 @@
+version: '3'
+services:
+    registry:
+        image: registry:2
+        ports:
+        - 5000:5000
+        volumes:
+            - ./registry-config.yaml:/etc/docker/registry/config.yml
+            - /var/lib/registry
+            - ./auth:/auth/htpasswd
+    ui:
+        image: joxit/docker-registry-ui:static
+        ports:
+        - 8888:80
+        environment:
+            REGISTRY_URL: 'http://registry:5000'
+            DELETE_IMAGES: 'true'
+

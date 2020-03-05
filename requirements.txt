@@ -1,0 +1,5 @@
+requests
+docker
+PyYaml
+click
+colorama
